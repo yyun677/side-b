@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2a2f22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>SIDE B — Worry Stone</title>
+<meta property="og:title" content="SIDE B — Worry Stone">
+<meta property="og:description" content="WHAT YOU SEE IS ONLY ONE SIDE. 67ID Graduation Exhibition 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@500;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ A. ISSUE : receipt printer prints the stone's ID card ============ -->
+<section class="view view-issue" data-view="issue" hidden>
+  <div class="bg bg-stone"></div>
+  <div class="dim"></div>
+  <div class="stage">
+    <img class="issue-logo" src="assets/img/ui/logo-sides-green.png" alt="SIDES">
+    <div class="issue-title">
+      <p class="t1">Archive</p>
+      <p class="t2">기록된 워리스톤 <span data-stone-no>1</span></p>
+    </div>
+    <div class="feed"><img class="feed-card" alt=""></div>
+    <div class="printer"><i class="slit"></i></div>
+    <p class="issue-status">카드를 발급하고 있어요</p>
+    <div class="issue-actions">
+      <button class="btn-home" type="button" data-go="home">HOME</button>
+      <button class="btn-save" type="button">증서 저장하기</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ B. HOME ============ -->
+<section class="view view-home" data-view="home" hidden>
+  <div class="bg bg-window"></div>
+  <div class="stage">
+    <div class="window">
+      <div class="titlebar">
+        <img class="tb-icon" src="assets/img/stones/soul.png" alt="">
+        <span class="tb-title">SIDE B</span>
+        <span class="tb-btns" aria-hidden="true"><i class="min"></i><i class="max"></i><i class="close"></i></span>
+      </div>
+      <div class="panel">
+        <div class="home-tab"><img src="assets/img/stones/spark.png" alt=""><span>HOME</span></div>
+        <a class="home-item hi-stone" href="#stone"><img src="assets/img/stones/rumi.png" alt=""><span>STONE</span></a>
+        <a class="home-item hi-archive" href="#archive"><img src="assets/img/stones/veil.png" alt=""><span>ARCHIVE</span></a>
+        <a class="home-item hi-book" href="#book"><img src="assets/img/stones/bloom.png" alt=""><span>BOOK</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C-1. STONE ============ -->
+<section class="view view-stone" data-view="stone" hidden>
+  <div class="bg bg-window"></div>
+  <div class="stage">
+    <div class="window">
+      <div class="titlebar" data-include="titlebar"></div>
+      <div class="panel">
+        <nav class="tabs" data-include="tabs"></nav>
+        <header class="sec-head">
+          <img src="assets/img/ui/icon-folder.png" alt="">
+          <h2>WORRY STONE ARCHIVE</h2>
+        </header>
+        <ul class="stone-list"></ul>
+        <img class="panel-logo" src="assets/img/ui/logo-sides-dark.png" alt="SIDES">
+      </div>
+    </div>
+  </div>
+  <div class="card-pop" hidden>
+    <div class="card-pop-inner">
+      <img class="card-pop-img" alt="">
+      <button class="card-pop-close" type="button">닫기</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C-2. ARCHIVE ============ -->
+<section class="view view-archive" data-view="archive" hidden>
+  <div class="bg bg-window"></div>
+  <div class="stage">
+    <div class="window">
+      <div class="titlebar" data-include="titlebar"></div>
+      <div class="panel">
+        <nav class="tabs" data-include="tabs"></nav>
+        <header class="sec-head">
+          <img src="assets/img/ui/icon-folder.png" alt="">
+          <h2>WORRY STONE STORY</h2>
+        </header>
+        <div class="archive">
+          <div class="poster">
+            <div class="poster-frames"></div>
+            <a class="play" target="_blank" rel="noopener" aria-label="아카이브 영상 재생">
+              <i aria-hidden="true"></i><span>영상 보기</span>
+            </a>
+          </div>
+          <p class="archive-count"><span data-cur>01</span> / <span data-total>06</span></p>
+          <div class="stills" role="list"></div>
+        </div>
+        <a class="yt-link" target="_blank" rel="noopener">YouTube에서 보기 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C-3. BOOK ============ -->
+<section class="view view-book" data-view="book" hidden>
+  <div class="bg bg-window"></div>
+  <div class="stage stage-scroll">
+    <div class="window window-long">
+      <div class="titlebar" data-include="titlebar"></div>
+      <div class="panel">
+        <nav class="tabs" data-include="tabs"></nav>
+        <header class="sec-head sec-head-book">
+          <img src="assets/img/ui/icon-notepad.png" alt="">
+          <h2>WORRY STONE STORY</h2>
+        </header>
+        <article class="book">
+          <div class="book-title">
+            <p class="vol">THE STORY OF WORRY STONE&nbsp; / VOL. 01</p>
+            <h1>고요한 돌무더기<br>The Legend of Lia Fáil</h1>
+          </div>
+          <figure>
+            <img src="assets/img/ui/lia-fail.jpg" alt="아일랜드 타라 언덕의 리아 파일">
+            <figcaption>*아일랜드 내 실제 위치하고 있는 리아 파일</figcaption>
+          </figure>
+          <div class="book-body">
+            <p>아주 오래전, 아일랜드에는 신비로운 돌 하나에 관한 전설이<br>전해졌습니다.</p>
+            <p>그 돌의 이름은 '리아 파일(Lia Fáil)'</p>
+            <p>진정한 왕이 될 자가 다가오면 울음소리를 내어<br>그를 알아본다는, 운명의 돌이었습니다.</p>
+            <p>안개가 짙게 내려앉은 어느 언덕 위에도<br>커다란 돌 하나가 있었습니다.</p>
+            <p>어느 날, 왕이 되고 싶은 네 사람이 돌을 찾아왔습니다.<br>기사는 자신의 힘을, 귀족은 화려한 혈통과 부를,<br>탐험가는 용기를, 학자는 뛰어난 지혜를 내세웠습니다.<br>그들은 모두 자신이 선택받을 자격이 있다고 믿었습니다.</p>
+            <p>하지만 돌은 아무런 대답도 하지 않았습니다.<br>아무리 소리치고 자신의 능력을 증명해 보여도,<br>돌은 그저 고요할 뿐이었습니다.<br>결국 화가 난 사람들은 돌을 발로 차고 하나둘 떠나갔습니다.</p>
+            <p>그리고 마지막으로, 평범한 소년 하나가 언덕을 찾아왔습니다.<br>소년은 자신이 누구인지 설명하지도,<br>돌에게 무엇을 요구하지도 않았습니다.<br>그저 조용히 다가가 돌을 쓰다듬으며 곁에 머물렀습니다.<br>얼마나 시간이 흘렀을까요.</p>
+            <p>오랫동안 침묵하던 돌에서 작은 울림이 들려왔습니다.<br>이윽고 돌은 은은한 빛을 내기 시작했고,<br>소년에게 작고 소박한 돌 하나를 건넸습니다.<br>소년은 아무 말 없이 그 돌을 두 손으로 받아 쥐었습니다.</p>
+          </div>
+          <hr>
+          <div class="book-sideb">
+            <p class="lead">BEYOND THE FIRST LOOK.</p>
+            <p>우리는 종종 눈에 보이는 모습만으로 누군가를 판단합니다.<br>하지만 진짜 모습은 겉으로 드러난 것보다,<br>조금 더 가까이 다가가 오래 머물렀을 때<br>비로소 발견되기도 합니다.</p>
+            <p>당신이 손에 쥔 작은 워리스톤도 마찬가지입니다.<br>누군가를 쉽게 판단하려는 순간,<br>이 돌을 천천히 만져보세요.</p>
+            <p>어쩌면 당신이 아직 발견하지 못한<br>또 다른 모습이 있을지도 모릅니다.</p>
+            <p class="sign">The Other Side — SIDE B</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- save fallback (long-press) -->
+<div class="sheet" hidden>
+  <img alt="워리스톤 증서">
+  <p>이미지를 <b>길게 눌러</b><br>‘사진 앱에 저장’을 선택하세요</p>
+  <button type="button">닫기</button>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
