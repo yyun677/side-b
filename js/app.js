@@ -91,22 +91,34 @@
     const b = e.target.closest(".still");
     if (!b) return;
     showShot(+b.dataset.i);
-    if (!archive.classList.contains("playing")) startShots();
+    if (player.hidden) startShots();
   });
   play.href = D.youtubeId ? `https://youtu.be/${D.youtubeId}` : D.youtubeUrl;
+  // The video plays in a full-width layer outside the zoomed 402px stage:
+  // iOS Safari draws iframes inside a CSS-zoomed box at the wrong size.
+  const player = document.createElement("div");
+  player.className = "player";
+  player.hidden = true;
+  player.innerHTML = `<div class="player-box"></div><button type="button" class="player-close">닫기</button>`;
+  document.body.appendChild(player);
   play.addEventListener("click", (e) => {
     if (!D.youtubeId) return; // no embed: open YouTube in a new tab
     e.preventDefault();
     stopShots();
-    archive.classList.add("playing");
-    $(".poster", archive).insertAdjacentHTML("beforeend",
+    $(".player-box", player).innerHTML =
       `<iframe src="https://www.youtube-nocookie.com/embed/${D.youtubeId}?autoplay=1&playsinline=1&rel=0"
-        title="67ID archive" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`);
+        title="67ID archive" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    player.hidden = false;
   });
+  function closePlayer() {
+    $(".player-box", player).innerHTML = "";
+    player.hidden = true;
+  }
+  $(".player-close", player).addEventListener("click", () => { closePlayer(); startShots(); });
+  player.addEventListener("click", (e) => { if (e.target === player) { closePlayer(); startShots(); } });
   function resetArchive() {
     stopShots();
-    archive.classList.remove("playing");
-    const f = $("iframe", archive); if (f) f.remove();
+    closePlayer();
   }
   $(".yt-link").href = D.youtubeId ? `https://youtu.be/${D.youtubeId}` : D.youtubeUrl;
 
